@@ -1,11 +1,10 @@
+alert("welcome to oche's ROCK-PAPER-SCISSORS game")
 const rock = 0;
 const paper = 1;
 const scissors = 2;
-
 function getComputerChoice() {
     return Math.floor(Math.random()*3);
 }
-
 function playerNumber(playerChoice) {
     let playerSelection;
     if (playerChoice==="rock") {
@@ -17,7 +16,6 @@ function playerNumber(playerChoice) {
     }
     return playerSelection;
 }
-
 function choice(number) {
     let result;
     if (number === 0) {
@@ -29,9 +27,6 @@ function choice(number) {
     }
     return result;
 }
-
-
-
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection===computerSelection) {
@@ -67,22 +62,46 @@ function playRound(playerSelection, computerSelection) {
 
 
 
+function playerSelect(e, playerChoice) {
+    const rock = document.getElementById('rock');
+    rock.addEventListener('click', () =>
+        playRound(0,getComputerChoice()));
+    const paper = document.getElementById('paper');
+    paper.addEventListener('click', () =>
+        playRound(1,getComputerChoice()));
+    const scissors = document.getElementById('scissors');
+    scissors.addEventListener('click', () =>
+        playRound(2,getComputerChoice()));
+
+  }
 
 
 function game() {
-    let rounds = 4;
+   /* let rounds = 4;
     let myWins=0;
-    for (let i=0; i<rounds; i++) {
-        let playerChoice = window.prompt("Enter your choice (no caps): ");
-        let comp = getComputerChoice();
-        let you =  playerNumber(playerChoice);
+   // for (let i=0; i<rounds; i++) {*/
+        let playerChoice;
+        playerSelect(playerChoice);
+
+        /*let comp = getComputerChoice();
+        let you =  playerChoice;
         console.log("Computer: "+ choice(comp));
         console.log("You: "+choice(you));
-        myWins += playRound(you, comp);
-    }
+       // myWins += playRound(you, comp);
+    /*}
     if (rounds%2 != 0) {
         if (myWins >= rounds/2) {
             console.log("You win!!!!");
+
+    
+        
+          
+    
+
+        
+    
+    @@ -94,7 +108,7 @@ function game() {
+  
          } else {
              console.log("You lose!!!");
          }
@@ -94,8 +113,18 @@ function game() {
          } else {
              console.log("You lose!!!");
          }
-    }
+    }*/
 
 }
 
+
+    
+          
+            
+    
+
+          
+    
+    
+  
 game();
